@@ -113,6 +113,33 @@ void setup() {
   //    line(lineThreeAX, lineThreeAY, lineThreeBX, lineThreeBY);
   //  }
   //}
+  
+  //// multiple from ramdom dots
+  //for (int i = 0; i < numColumns; i++) {
+  //  for (int j = 0; j < numRows; j++) {
+  //    int numLines = (numColumns * numRows) - (i * j) - 1 ; //<>//
+      
+  //    for(int k = 0; k < numLines; k++) { //<>//
+  //      float lineOneAX = random(i * cellWidth + (cellWidth * 1/3), i * cellWidth + (cellWidth * 2/3));
+  //      float lineOneAY = random(j * cellHeight, j * cellHeight + (cellHeight * 1/3));
+  //      float lineOneBX = random(i * cellWidth, i * cellWidth + (cellWidth * 1/3)); 
+  //      float lineOneBY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //      line(lineOneAX, lineOneAY, lineOneBX, lineOneBY);
+        
+  //      float lineTwoAX = random(i * cellWidth, i * cellWidth + (cellWidth * 1/3)); 
+  //      float lineTwoAY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);      
+  //      float lineTwoBX = random(i * cellWidth + (cellWidth * 2/3), i * cellWidth + cellWidth);
+  //      float lineTwoBY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //      line(lineTwoAX, lineTwoAY, lineTwoBX, lineTwoBY);
+        
+  //      float lineThreeAX = random(i * cellWidth + (cellWidth * 2/3), i * cellWidth + cellWidth);
+  //      float lineThreeAY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //      float lineThreeBX = random(i * cellWidth + (cellWidth * 1/3), i * cellWidth + (cellWidth * 2/3));
+  //      float lineThreeBY = random(j * cellHeight, j * cellHeight + (cellHeight * 1/3));
+  //      line(lineThreeAX, lineThreeAY, lineThreeBX, lineThreeBY);  
+  //    }
+  //  }
+  //}  
 
   // visiluase cell coordinates
   strokeWeight(2);
@@ -123,6 +150,7 @@ void setup() {
     for (int j = 0; j < numRows; j++) {
       line(0, (j + 1) * cellHeight, width, (j + 1) * cellHeight);
       text((i + 1) + ":" + (j + 1), i * cellWidth, j * cellHeight + 10);
+      text(j * numColumns + i + 1, i * cellWidth, j * cellHeight + 25);
     }
   }
 
