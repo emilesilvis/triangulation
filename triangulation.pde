@@ -16,7 +16,16 @@ void setup() {
     for (int j = 0; j < numRows; j++) {
       int cellSequenceNumber = j * numColumns + i + 1;
       int numLines = (numColumns * numRows) - (cellSequenceNumber) + 1;
-      float offsetWeight = float(numLines)/float(numColumns * numRows);
+      float offsetWeight = float(numLines)/float(numColumns * numRows);      
+      //strokeWeight(2 * (1 - offsetWeight) * 1.33);
+      strokeWeight(0.5);
+      stroke(200 * offsetWeight);
+      
+      if(cellSequenceNumber == (numColumns * numRows)) {
+        offsetWeight = 0;
+        strokeWeight(2);
+        stroke(0);
+      }
 
       for (int k = 0; k < numLines; k++) {
         float lineOneAX = i * cellWidth + (cellWidth * 1/3) + ((cellWidth * 1/3)/2) + random(cellWidth * 1/3/2 * -1, cellWidth * 1/3/2) * offsetWeight;
@@ -40,5 +49,5 @@ void setup() {
     }
   }
   save("out.png");
-  noLoop();
+  exit();
 }
