@@ -26,19 +26,19 @@ void setup() {
   }
 
   //put an ellipse at the 'triangle points'
-  for (int i = 0; i < numColumns; i++) {
-    for (int j = 0; j < numRows; j++) {
-      float pointOneX = i * cellWidth + (cellWidth * 1/3) + ((cellWidth * 1/3)/2);
-      float pointOneY = j * cellHeight + (cellHeight * 1/3) - ((cellWidth * 1/3)/2);
-      ellipse(pointOneX, pointOneY, 10, 10);
-      float pointTwoX = i * cellWidth + ((cellWidth * 1/3)/2); 
-      float pointTwoY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2);
-      ellipse(pointTwoX, pointTwoY, 10, 10);
-      float pointThreeX = i * cellWidth + (cellWidth * 2/3) + ((cellWidth * 1/3)/2);
-      float pointThreeY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2);
-      ellipse(pointThreeX, pointThreeY, 10, 10);
-    }
-  }  
+  //for (int i = 0; i < numColumns; i++) {
+  //  for (int j = 0; j < numRows; j++) {
+  //    float pointOneX = i * cellWidth + (cellWidth * 1/3) + ((cellWidth * 1/3)/2);
+  //    float pointOneY = j * cellHeight + (cellHeight * 1/3) - ((cellWidth * 1/3)/2);
+  //    ellipse(pointOneX, pointOneY, 10, 10);
+  //    float pointTwoX = i * cellWidth + ((cellWidth * 1/3)/2); 
+  //    float pointTwoY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2);
+  //    ellipse(pointTwoX, pointTwoY, 10, 10);
+  //    float pointThreeX = i * cellWidth + (cellWidth * 2/3) + ((cellWidth * 1/3)/2);
+  //    float pointThreeY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2);
+  //    ellipse(pointThreeX, pointThreeY, 10, 10);
+  //  }
+  //}  
 
   //// draw lines between points 
   //  for (int i = 0; i < numColumns; i++) {
@@ -55,26 +55,64 @@ void setup() {
   //  }
   //}
 
-  // draw RANDOM lines between points 
-  for (int i = 0; i < numColumns; i++) {
-    for (int j = 0; j < numRows; j++) {
-      float xOffset = random(cellHeight * 1/3/2);
-      float yOffset = random(cellWidth * 1/3/2);
-      float pointOneX = i * cellWidth + (cellWidth * 1/3) + ((cellWidth * 1/3)/2) + xOffset;
-      float pointOneY = j * cellHeight + (cellHeight * 1/3) - ((cellWidth * 1/3)/2) + yOffset;
-      float xOffset2 = random(cellHeight * 1/3/2);
-      float yOffset2 = random(cellWidth * 1/3/2);
-      float pointTwoX = i * cellWidth + ((cellWidth * 1/3)/2) + xOffset2; 
-      float pointTwoY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2) + yOffset2;
-      float xOffset3 = random(cellHeight * 1/3/2);
-      float yOffset3 = random(cellWidth * 1/3/2);
-      float pointThreeX = i * cellWidth + (cellWidth * 2/3) + ((cellWidth * 1/3)/2) + xOffset3;
-      float pointThreeY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2) + yOffset3;
-      line(pointOneX, pointOneY, pointTwoX, pointTwoY);
-      line(pointTwoX, pointTwoY, pointThreeX, pointThreeY);
-      line(pointThreeX, pointThreeY, pointOneX, pointOneY);
-    }
-  }
+  //// draw random triangle 
+  //for (int i = 0; i < numColumns; i++) {
+  //  for (int j = 0; j < numRows; j++) {
+  //    float xOffset = random(cellHeight * 1/3/2);
+  //    float yOffset = random(cellWidth * 1/3/2);
+  //    float pointOneX = i * cellWidth + (cellWidth * 1/3) + ((cellWidth * 1/3)/2) + xOffset;
+  //    float pointOneY = j * cellHeight + (cellHeight * 1/3) - ((cellWidth * 1/3)/2) + yOffset;
+  //    float xOffset2 = random(cellHeight * 1/3/2);
+  //    float yOffset2 = random(cellWidth * 1/3/2);
+  //    float pointTwoX = i * cellWidth + ((cellWidth * 1/3)/2) + xOffset2; 
+  //    float pointTwoY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2) + yOffset2;
+  //    float xOffset3 = random(cellHeight * 1/3/2);
+  //    float yOffset3 = random(cellWidth * 1/3/2);
+  //    float pointThreeX = i * cellWidth + (cellWidth * 2/3) + ((cellWidth * 1/3)/2) + xOffset3;
+  //    float pointThreeY = j * cellHeight + (cellHeight * 2/3) + ((cellWidth * 1/3)/2) + yOffset3;
+  //    line(pointOneX, pointOneY, pointTwoX, pointTwoY);
+  //    line(pointTwoX, pointTwoY, pointThreeX, pointThreeY);
+  //    line(pointThreeX, pointThreeY, pointOneX, pointOneY);
+  //  }
+  //}
+
+  //// 'triangle dots' with random offsets
+  //for (int i = 0; i < numColumns; i++) {
+  //  for (int j = 0; j < numRows; j++) {
+  //    float pointOneX = random(i * cellWidth + (cellWidth * 1/3), i * cellWidth + (cellWidth * 2/3));
+  //    float pointOneY = random(j * cellHeight, j * cellHeight + (cellHeight * 1/3));
+  //    ellipse(pointOneX, pointOneY, 10, 10);
+  //    float pointTwoX = random(i * cellWidth, i * cellWidth + (cellWidth * 1/3)); 
+  //    float pointTwoY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //    ellipse(pointTwoX, pointTwoY, 10, 10);
+  //    float pointThreeX = random(i * cellWidth + (cellWidth * 2/3), i * cellWidth + cellWidth);
+  //    float pointThreeY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //    ellipse(pointThreeX, pointThreeY, 10, 10);
+  //  }
+  //}
+  
+  //// lines from ramdom dots
+  //for (int i = 0; i < numColumns; i++) {
+  //  for (int j = 0; j < numRows; j++) {
+  //    float lineOneAX = random(i * cellWidth + (cellWidth * 1/3), i * cellWidth + (cellWidth * 2/3));
+  //    float lineOneAY = random(j * cellHeight, j * cellHeight + (cellHeight * 1/3));
+  //    float lineOneBX = random(i * cellWidth, i * cellWidth + (cellWidth * 1/3)); 
+  //    float lineOneBY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //    line(lineOneAX, lineOneAY, lineOneBX, lineOneBY);
+      
+  //    float lineTwoAX = random(i * cellWidth, i * cellWidth + (cellWidth * 1/3)); 
+  //    float lineTwoAY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);      
+  //    float lineTwoBX = random(i * cellWidth + (cellWidth * 2/3), i * cellWidth + cellWidth);
+  //    float lineTwoBY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //    line(lineTwoAX, lineTwoAY, lineTwoBX, lineTwoBY);
+      
+  //    float lineThreeAX = random(i * cellWidth + (cellWidth * 2/3), i * cellWidth + cellWidth);
+  //    float lineThreeAY = random(j * cellHeight + (cellHeight * 2/3), j * cellHeight + cellHeight);
+  //    float lineThreeBX = random(i * cellWidth + (cellWidth * 1/3), i * cellWidth + (cellWidth * 2/3));
+  //    float lineThreeBY = random(j * cellHeight, j * cellHeight + (cellHeight * 1/3));
+  //    line(lineThreeAX, lineThreeAY, lineThreeBX, lineThreeBY);
+  //  }
+  //}
 
   // visiluase cell coordinates
   strokeWeight(2);
