@@ -1,4 +1,4 @@
-//TODO: rewrite using translate, so I can rotate each triangle around its own access //<>// //<>//
+//TODO: rewrite using translate, so I can rotate each triangle around its own axis
 
 float margin = 20;
 int numColumns = 8;
